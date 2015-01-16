@@ -1,0 +1,8 @@
+$farm = Get-SPFarm
+foreach($solution in $farm.Solutions)
+{
+    $solfile = $solution.SolutionFile
+    $solpath = "c:\extwsp\" + $solution.Name
+    Write-Host $solpath
+    $solfile.SaveAs($solpath)
+}
